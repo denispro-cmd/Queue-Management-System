@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+	<center>
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header text-black">
+                  <h2>Exit from the Queue!</h2>
+                  <h3>Are you sure you want to exit the Queue? </h3>
+                </div>
+                <div class="card-body">
+                  <form action="" method="POST" novalidate>
+                      {% csrf_token %}
+                           <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                            <a class="btn btn-outline-secondary" href="{% url 'token-detail' object.id %}">Cancel</a>
+                        </div>
+                    </form>
+                 </div>
+                    </div>   
+                </div>
+              </div>
+            </div>
+        </div>
+      </section> 
+  </center>
+{% endblock %}

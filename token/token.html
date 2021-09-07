@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+   <h3>Hello user, to view your token details click on your username </h3>
+    <h4>Thanks!</h4>
+    {% for order in orders %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h2><a class="mr-2" href="{% url 'token-detail' order.id %}">Created By {{ order.author }}</a></h2>
+              <small class="text-muted">Date {{ order.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title">Token ID {{ order.token }}</a></h2>
+          </div>
+        </article>
+    {% endfor %}
+</center>
+{% endblock content %}

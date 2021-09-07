@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+	<center>
+      <h3>Hello User</h3>
+     <article class="media content-section">
+      <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+          {% if object.author == user %}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1 "href="{% url 'token-update' object.id %}">Update Queue</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1 "href="{% url 'token-delete' object.id %}">Exit Queue</a>
+        </div>
+      {% endif %}
+        <h3 class="account-heading">Created by:{{object.author}}</h2>
+          <p class="text-secondary">Token ID:{{object.token}}</p>
+          <p class="text-secondary">FirstName:{{object.lastname}}</p>
+          <p class="text-secondary">LastName:{{object.firstname}}</p>
+          <p class="text-secondary">Email:{{object.email}}</p>
+          <p class="text-secondary">Department:{{object.department_to_visit}}</p>
+          <p class="text-secondary">Reason for the visit:{{object.purpose}}</p>
+          <p class="text-secondary">Address:{{object.address}}</p>
+          <p class="text-secondary">Phone Number:{{object.phone}}</p>
+          <p class="text-secondary">Queue Date:{{object.date_posted}}</p>
+
+
+      </div>
+    </div> 
+  </center>
+{% endblock content %}
